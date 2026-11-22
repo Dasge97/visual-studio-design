@@ -1,0 +1,20 @@
+{
+  "requestId": "request-demo-1",
+  "projectId": "project-twin-hills-demo",
+  "workspaceId": "workspace-current",
+  "expectedRevision": 1,
+  "operations": [
+    {
+      "type": "updateNode",
+      "nodeId": "money",
+      "changes": {
+        "layout": {
+          "offset": {
+            "x": 32,
+            "y": 24
+          }
+        }
+      }
+    }
+  ]
+}

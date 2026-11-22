@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "id": "design-twin-hills-demo",
+  "name": "Twin Hills · Ejemplo sintético",
+  "kind": "game",
+  "screens": {
+    "hud": {
+      "id": "hud",
+      "name": "HUD",
+      "rootId": "hud-root",
+      "referenceViewportId": "desktop",
+      "viewportIds": [
+        "desktop",
+        "compact"
+      ]
+    }
+  },
+  "nodes": {
+    "hud-root": {
+      "id": "hud-root",
+      "name": "hud-root",
+      "type": "container",
+      "layout": {
+        "mode": "anchored",
+        "width": {
+          "mode": "fixed",
+          "value": 1280
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 720
+        },
+        "anchor": "top-left",
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "appearance": {},
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "children": [
+        "money",
+        "progress",
+        "toolbar",
+        "upgrade-panel"
+      ],
+      "childrenLayout": {
+        "mode": "free",
+        "gap": 0,
+        "padding": 0,
+        "align": "start",
+        "justify": "start"
+      },
+      "viewportOverrides": {
+        "compact": {
+          "layout": {
+            "width": {
+              "mode": "fixed",
+              "value": 960
+            },
+            "height": {
+              "mode": "fixed",
+              "value": 540
+            }
+          }
+        }
+      }
+    },
+    "money": {
+      "id": "money",
+      "name": "money",
+      "type": "text",
+      "layout": {
+        "mode": "anchored",
+        "width": {
+          "mode": "fixed",
+          "value": 120
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40
+        },
+        "anchor": "top-left",
+        "offset": {
+          "x": 24,
+          "y": 24
+        }
+      },
+      "appearance": {
+        "textColor": {
+          "tokenId": "text"
+        },
+        "fontSize": 24
+      },
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "content": {
+        "kind": "binding",
+        "variableId": "money",
+        "prefix": "Monedas: "
+      }
+    },
+    "progress": {
+      "id": "progress",
+      "name": "progress",
+      "type": "text",
+      "layout": {
+        "mode": "anchored",
+        "width": {
+          "mode": "fixed",
+          "value": 160
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40
+        },
+        "anchor": "top-right",
+        "offset": {
+          "x": -24,
+          "y": 24
+        }
+      },
+      "appearance": {
+        "textColor": {
+          "tokenId": "text"
+        }
+      },
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "content": {
+        "kind": "binding",
+        "variableId": "progress",
+        "prefix": "Progreso: ",
+        "suffix": "%"
+      }
+    },
+    "toolbar": {
+      "id": "toolbar",
+      "name": "toolbar",
+      "type": "container",
+      "layout": {
+        "mode": "anchored",
+        "width": {
+          "mode": "fixed",
+          "value": 300
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 64
+        },
+        "anchor": "bottom-center",
+        "offset": {
+          "x": 0,
+          "y": -24
+        }
+      },
+      "appearance": {},
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "children": [
+        "open-upgrades"
+      ],
+      "childrenLayout": {
+        "mode": "row",
+        "gap": 8,
+        "padding": 12,
+        "align": "start",
+        "justify": "start"
+      }
+    },
+    "open-upgrades": {
+      "id": "open-upgrades",
+      "name": "open-upgrades",
+      "type": "text",
+      "layout": {
+        "mode": "flow-child",
+        "width": {
+          "mode": "fixed",
+          "value": 200
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40
+        }
+      },
+      "appearance": {
+        "fill": {
+          "tokenId": "accent"
+        },
+        "textColor": "#ffffff"
+      },
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "role": "button",
+      "content": {
+        "kind": "literal",
+        "text": "Mejoras"
+      }
+    },
+    "upgrade-panel": {
+      "id": "upgrade-panel",
+      "name": "upgrade-panel",
+      "type": "container",
+      "layout": {
+        "mode": "anchored",
+        "width": {
+          "mode": "fixed",
+          "value": 360
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 240
+        },
+        "anchor": "top-left",
+        "offset": {
+          "x": 24,
+          "y": 100
+        }
+      },
+      "appearance": {},
+      "visible": false,
+      "enabled": true,
+      "zIndex": 0,
+      "children": [
+        "upgrade-title",
+        "buy-upgrade",
+        "close-upgrades"
+      ],
+      "childrenLayout": {
+        "mode": "column",
+        "gap": 12,
+        "padding": 16,
+        "align": "start",
+        "justify": "start"
+      }
+    },
+    "upgrade-title": {
+      "id": "upgrade-title",
+      "name": "upgrade-title",
+      "type": "text",
+      "layout": {
+        "mode": "flow-child",
+        "width": {
+          "mode": "fixed",
+          "value": 300
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40
+        }
+      },
+      "appearance": {},
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "content": {
+        "kind": "literal",
+        "text": "Mejora de ejemplo · 100 monedas"
+      }
+    },
+    "buy-upgrade": {
+      "id": "buy-upgrade",
+      "name": "buy-upgrade",
+      "type": "text",
+      "layout": {
+        "mode": "flow-child",
+        "width": {
+          "mode": "fixed",
+          "value": 200
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40
+        }
+      },
+      "appearance": {
+        "fill": {
+          "tokenId": "accent"
+        }
+      },
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "role": "button",
+      "content": {
+        "kind": "literal",
+        "text": "Comprar"
+      }
+    },
+    "close-upgrades": {
+      "id": "close-upgrades",
+      "name": "close-upgrades",
+      "type": "text",
+      "layout": {
+        "mode": "flow-child",
+        "width": {
+          "mode": "fixed",
+          "value": 200
+        },
+        "height": {
+          "mode": "fixed",
+          "value": 40
+        }
+      },
+      "appearance": {},
+      "visible": true,
+      "enabled": true,
+      "zIndex": 0,
+      "role": "button",
+      "content": {
+        "kind": "literal",
+        "text": "Cerrar"
+      }
+    }
+  },
+  "components": {},
+  "tokens": {
+    "accent": {
+      "id": "accent",
+      "name": "Acento",
+      "type": "color",
+      "value": "#0f766e"
+    },
+    "text": {
+      "id": "text",
+      "name": "Texto",
+      "type": "color",
+      "value": "#17212b"
+    }
+  },
+  "viewports": {
+    "desktop": {
+      "id": "desktop",
+      "name": "Escritorio",
+      "width": 1280,
+      "height": 720
+    },
+    "compact": {
+      "id": "compact",
+      "name": "Compacto",
+      "width": 960,
+      "height": 540
+    }
+  },
+  "variables": {
+    "money": {
+      "id": "money",
+      "name": "Dinero",
+      "type": "number",
+      "default": 250
+    },
+    "progress": {
+      "id": "progress",
+      "name": "Progreso",
+      "type": "number",
+      "default": 40
+    }
+  },
+  "scenarios": {
+    "normal": {
+      "id": "normal",
+      "name": "Partida normal",
+      "screenId": "hud",
+      "values": {
+        "money": 250,
+        "progress": 40
+      },
+      "visibility": {
+        "upgrade-panel": false
+      }
+    },
+    "no-resources": {
+      "id": "no-resources",
+      "name": "Sin recursos",
+      "screenId": "hud",
+      "values": {
+        "money": 0,
+        "progress": 40
+      },
+      "visibility": {
+        "upgrade-panel": true
+      }
+    },
+    "upgrade-available": {
+      "id": "upgrade-available",
+      "name": "Mejora disponible",
+      "screenId": "hud",
+      "values": {
+        "money": 250,
+        "progress": 40
+      },
+      "visibility": {
+        "upgrade-panel": true
+      }
+    }
+  },
+  "stateRules": {
+    "cannot-buy": {
+      "id": "cannot-buy",
+      "nodeId": "buy-upgrade",
+      "priority": 10,
+      "when": {
+        "op": "lt",
+        "left": {
+          "kind": "variable",
+          "variableId": "money"
+        },
+        "right": {
+          "kind": "literal",
+          "value": 100
+        }
+      },
+      "overrides": {
+        "enabled": false,
+        "appearance": {
+          "opacity": 0.4
+        }
+      }
+    }
+  },
+  "interactions": {
+    "open": {
+      "id": "open",
+      "nodeId": "open-upgrades",
+      "event": "click",
+      "actions": [
+        {
+          "type": "setVisible",
+          "nodeId": "upgrade-panel",
+          "value": true
+        }
+      ]
+    },
+    "close": {
+      "id": "close",
+      "nodeId": "close-upgrades",
+      "event": "click",
+      "actions": [
+        {
+          "type": "setVisible",
+          "nodeId": "upgrade-panel",
+          "value": false
+        }
+      ]
+    },
+    "buy": {
+      "id": "buy",
+      "nodeId": "buy-upgrade",
+      "event": "click",
+      "actions": [
+        {
+          "type": "incrementVariable",
+          "variableId": "money",
+          "amount": -100
+        }
+      ],
+      "when": {
+        "op": "gte",
+        "left": {
+          "kind": "variable",
+          "variableId": "money"
+        },
+        "right": {
+          "kind": "literal",
+          "value": 100
+        }
+      }
+    }
+  },
+  "assetIds": []
+}

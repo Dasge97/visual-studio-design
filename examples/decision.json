@@ -1,0 +1,34 @@
+{
+  "id": "decision-composition",
+  "projectId": "project-twin-hills-demo",
+  "title": "Distribución del HUD",
+  "status": "pending",
+  "scope": {
+    "screenIds": [
+      "hud"
+    ],
+    "nodeIds": [
+      "money",
+      "toolbar"
+    ],
+    "componentIds": [],
+    "tokenIds": [],
+    "propertyPaths": [
+      "layout"
+    ]
+  },
+  "rationale": "",
+  "softIntent": "Mantener libre el centro de la pantalla.",
+  "constraints": [
+    {
+      "kind": "anchor",
+      "targetId": "toolbar",
+      "propertyPath": "layout.anchor",
+      "value": "bottom-center"
+    }
+  ],
+  "alternativeIds": [],
+  "rejected": [],
+  "approvedSnapshotId": null,
+  "approvedFingerprints": {}
+}
